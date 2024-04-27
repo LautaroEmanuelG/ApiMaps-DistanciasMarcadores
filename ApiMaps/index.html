@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Maps Api</title>
+    <style>
+        #map {
+            height: 600px;
+            width: 600px;
+            margin-bottom: 20px;
+            border: 3px solid #000;
+            box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+            border-radius: 20px;
+        }
+
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #place_input {
+            width: 600px;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 3px solid #000;
+            box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+            border-radius: 20px;
+        }
+
+        .caja {
+            width: auto;
+            display: flex;
+            justify-content: center;
+            align-items: start;
+            gap: 40px;
+        }
+
+        .lista {
+            width: 200px;
+            padding: 10px;
+            border: 3px solid #000;
+            box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+            border-radius: 20px;
+        }
+
+        #loading {
+            width: 200px;
+            padding: 10px;
+            font-size: 30px;
+        }
+
+        #lista-marcadores {
+            display: flex;
+            flex-direction: column;
+            justify-content: start;
+            width: 250px;
+            border: 3px solid #000;
+            box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+            text-decoration: none;
+            list-style-type: none;
+            padding-bottom: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Hagamo' un asado tomemo ferné</h1>
+    <h2 id="distancia"></h2>
+    <div id="loading" style="display: none;">Cargando...</div>
+    <input type="text" id="place_input" placeholder="Ingresa una ubicacion">
+    <div class="caja">
+        <ul id="lista-marcadores">
+            <h3>Lista de marcadores</h3>
+        </ul>
+        <div id="map"></div>
+    </div>
+</body>
+<script async
+    src="https://maps.googleapis.com/maps/api/js?key=API_KEY&libraries=places,geometry&callback=initMap"></script>
+<script src="./main.js"></script>
+
+</html>
